@@ -20,7 +20,6 @@ public class NebulaWorker extends Worker {
     @Override
     public Result doWork() {
         Context context = getApplicationContext();
-        String action = context.getString(R.string.notification_action);
 
         duration = getInputData().getInt(KEY_DURATION, 0);
         elapsed = 0;

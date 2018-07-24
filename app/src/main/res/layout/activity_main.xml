@@ -9,8 +9,8 @@
 
     <TextView
         android:id="@+id/intro"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
         android:text="@string/info"
         style="@style/NebulaTitle"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -35,6 +35,23 @@
         android:onClick="onClickBtnFire"
         app:layout_constraintTop_toBottomOf="@id/description"
         app:layout_constraintLeft_toLeftOf="parent"
+        />
+    <TextView
+        android:id="@+id/text_to_service"
+        android:text="@string/using_work_manager"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/btn_fire"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+    <Switch
+        android:id="@+id/switch_to_service"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClickSwitchToService"
+        app:layout_constraintTop_toBottomOf="@id/text_to_service"
+        app:layout_constraintRight_toRightOf="@id/text_to_service"
         />
 
     <Button

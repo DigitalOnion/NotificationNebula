@@ -12,6 +12,8 @@
     <string name="notification_title">Nebula notifications</string>
     <string name="notification_content">Nebula notification information</string>
     <string name="btn_fire">Fire lengthily task</string>
+    <string name="using_service">Using Services</string>
+    <string name="using_work_manager">Using WorkManager</string>
     <string name="btn_kill_it">Kill the app!</string>
     <string name="btn_test">Test</string>
 </resources>
