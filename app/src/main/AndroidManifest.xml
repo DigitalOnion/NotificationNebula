@@ -11,15 +11,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-<!--
-        <receiver android:name=".application.NebulaReceiver"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="com.outerspace.notificationnebula.NOTIFICATION_NEBULA"/>
-            </intent-filter>
-        </receiver>
--->
-
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

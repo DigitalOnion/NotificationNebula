@@ -33,7 +33,8 @@ public class NotificationNebula {
 
     public static void update(float percentage) {
         Log.d("LUIS:", "Percentage:" + percentage);
-        int progress = Math.round((1.0F - percentage) * MAX_PROGRESS);
+        int progress = Math.round((percentage) * MAX_PROGRESS);
+        builder.setContentText("Progress:" + progress + " %");
         builder.setProgress(MAX_PROGRESS, progress, false);
         manager.notify(notificationId, builder.build());
     }

@@ -12,13 +12,6 @@ import androidx.work.Worker;
 public class NebulaWorker extends Worker {
     public static final String KEY_DURATION = "KEY_DURATION";      // key for an int with milliseconds
 
-    public static final String KEY_TYPE = "KEY_TYPE";
-    public static interface broadcastType {
-        final String MESSAGE = "MESSAGE";
-        final String SHOW = "SHOW";
-        final String PROGRESS = "PROGRESS";
-    }
-
     private int duration = 0;
     private int elapsed = 0;
     private int interval = 0;
@@ -33,12 +26,7 @@ public class NebulaWorker extends Worker {
         elapsed = 0;
         interval = 1000;
 
-        //NotificationNebula.show(context);
-
-        Intent intent = new Intent();
-        intent.setAction(action)
-                .putExtra(KEY_TYPE, broadcastType.SHOW);
-        context.sendBroadcast(intent);
+        NotificationNebula.show(context);
 
         do {
 
@@ -57,14 +45,7 @@ public class NebulaWorker extends Worker {
             float progress = (float) elapsed / (float) duration;
             String message = "Notificaation progress: " + elapsed + "/" + duration + " = " + progress;
             Log.d("LUIS", message);
-            intent = new Intent();
-            intent.setAction(action)
-                    .putExtra(KEY_TYPE, broadcastType.MESSAGE)
-                    .putExtra(broadcastType.MESSAGE, message)
-                    .putExtra(broadcastType.PROGRESS, progress);
-            context.sendBroadcast(intent);
-
-            //NotificationNebula.update((float) elapsed / (float) duration);
+            NotificationNebula.update((float) elapsed / (float) duration);
 
         } while (elapsed < duration);
 
